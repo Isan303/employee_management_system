@@ -5,26 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-<!--     
-    <h1>IBM FSD Demo App</h1>
-    <hr />
-    <h4>IBM Java full stack demo application containing Java, Springboot, MongoDB, HTML, JavaScript and CSS.</h4>
-    <p>This application allows you to perform employee management functionalities. </p>
-    <hr>
-    <p>Please create these functionalities</p>
-    <p>Search employee by id, search all employees, add employee, update employee, search employee by name, delete employee </p> -->
 
-    <header>
+    <header class="header"><h1>IBM Employee Management System</h1></header>
+    <div class="navbar">
         <ul>
-            <li><a href="">Get All Employees</a></li>
-            <li><a href="">Get Employee By Id</a></li>
-            <li><a href="">Get Employees By Name</a></li>
-            <li><a href="">Add new Employee</a></li>
+            <li><button onclick="showAll()">Get All Employees</button></li>
+            <li><button onclick="searchById()">Get Employee By Id</button></li>
+            <li><button onclick="searchByName()">Get Employees By Name</button></li>   
+            <li><button onclick="addNewEmp()">Add new Employee</button></li>
+            <li><button onclick="updateEmployee()">Update Employee</button></li>
+            <li><button onclick="deleteEmployee()">Delete Employee</button></li>
         </ul>
-    </header>
-
+    </div>
+    <div id="output"></div>
+    <script src="frontend.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
