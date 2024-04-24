@@ -1,9 +1,6 @@
 // IBM FSD Demo App
-console.log('IBM FSD Demo App');
 
-// const restUrl = 'http://localhost:8090/';
 
-// ---
 const getAllEmpUrl = "http://localhost:9090/emp/get-all-emps";
 const postEmpUrl = "http://localhost:9090/emp/add-emp";
 const delUrl =`http://localhost:9090/emp/delete-emp/${employeeId}`;
@@ -19,13 +16,34 @@ const findAllEmployees = async () => {
         .catch((err) => { console.log(err) })
 };
 
-const findEmployeeById = (employeeId) => { };
+const employeeId = '6628a5a7c2d8c61dc0776ce3'
+const findEmployeeById = async (employeeId) => {
+    await fetch(`http://localhost:9090/emp/get-emp-by-id/${employeeId}`)
+        .then((res) => {
+            return res.json()
+        })
+        .then((res) => {
+            console.log(res);
+        })
+        .catch((err) => { console.log(err) })
+};
+// findEmployeeById(employeeId)
 
-const findEmployeeByName = (firstName) => { };
-
+const firstName = 'Sam'
+const findEmployeeByName = async(firstName) => {
+    await fetch(`http://localhost:9090/emp/get-emp-by-name/${firstName}`)
+        .then((res) => {
+            return res.json()
+        })
+        .then((res) => {
+            console.log(res);
+        })
+        .catch((err) => { console.log(err) })
+ };
+ findEmployeeByName(firstName)
 
 // dummy emp data 
-employee = {
+const employee = {
     "firstName": "Sam",
     "email": "Sam@gmail.com",
     "aadhaar": 90904545454,
