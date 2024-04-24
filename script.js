@@ -1,12 +1,12 @@
 // IBM FSD Demo App
 console.log('IBM FSD Demo App');
 
-const restUrl = 'http://localhost:8090/';
+// const restUrl = 'http://localhost:8090/';
 
 // ---
 const getAllEmpUrl = "http://localhost:9090/emp/get-all-emps";
 const postEmpUrl = "http://localhost:9090/emp/add-emp";
-
+const delUrl =`http://localhost:9090/emp/delete-emp/${employeeId}`;
 
 const findAllEmployees = async () => {
     await fetch(getAllEmpUrl)
@@ -49,6 +49,23 @@ const addEmployee = async (employee) => {
         });
 };
 
-const updateEmployee = (emploteeId, employee) => { };
+const deleteEmployee = async (employeeId) => {
+    await fetch(delUrl, {
+        method: "DELETE", // or 'PUT'
+       
+        
+    })
+        .then((res) => {
+            console.log("Deleted Successfully" + res);
 
-const deleteEmployee = (employeeId) => { };
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+};
+
+deleteEmployee(employeeId);
+
+
+
+
